@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Disco Funk Records</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div id="header">
+    <h1>Disco Funk Records</h1>
+    <h2>Vintage Music Inventory Management System</h2>
+</div>
+
+<div id="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/customers">Customers</a></li>
+        <li><a href="/sales">Sales</a></li>
+        <li><a href="/inventory">Inventory</a></li>
+        <li><a href="/songs">Songs</a></li>
+        <li><a href="/suppliers">Suppliers</a></li>
+        <li><a href="/purchases">Purchases</a></li>       
+        <form action="/reset" method="POST">
+            <button type="submit" class="reset-button" >Reset Database</button>
+        </form>
+
+    </ul>
+</div>
+
+<div id="main-content">
+    {{{body}}}
+</div>
+
+<div id="footer">
+    <p>CS340 – Team Disco Funk</p>
+</div>
+
+</body>
+</html>

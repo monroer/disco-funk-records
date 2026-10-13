@@ -1,0 +1,53 @@
+<h1>Suppliers</h1>
+
+<h2>Add Supplier</h2>
+<form action="/addSupplier" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Address:</label>
+    <input type="text" name="address">
+
+    <label>Phone Number:</label>
+    <input type="text" name="phoneNumber">
+
+    <label>Email:</label>
+    <input type="email" name="email">
+
+    <button type="submit">Add Supplier</button>
+</form>
+
+<hr>
+
+<h1>Existing Suppliers</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Supplier ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each suppliers}}
+            <tr>
+                <td>{{supplierID}}</td>
+                <td>{{name}}</td>
+                <td>{{address}}</td>
+                <td>{{phoneNumber}}</td>
+                <td>{{email}}</td>
+                <td>
+                    <a href="/inventory/edit/{{inventoryID}}">Edit</a>
+                    <form action="/inventory/delete" method="POST" style="display:inline;">
+                        <input type="hidden" name="inventoryID" value="{{inventoryID}}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+

@@ -1,0 +1,60 @@
+<h2>Inventory</h2>
+
+<h3>Create New Inventory</h3>
+<form action="/inventory/create" method="POST">
+    <label>Song ID: <input type="number" name="songID" required></label><br>
+    
+    <label>Type: 
+        <select name="type" required>
+            <option value="vinyl">Vinyl</option>
+            <option value="cassette">Cassette</option>
+            <option value="cd">CD</option>
+        </select>
+    </label><br>
+    
+    <label>Quantity: <input type="number" name="quantity" required></label><br>
+    
+    <label>Price: <input type="number" step="0.01" name="price" required></label><br>
+    
+    <input type="submit" value="Add Inventory">
+</form>
+
+
+
+<hr>
+
+<h3>Current Inventory</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Inventory ID</th>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Format</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each inventory}}
+            <tr>
+                <td>{{inventoryID}}</td>
+                <td>{{title}}</td>
+                <td>{{artist}}</td> 
+                <td>{{format}}</td> 
+                <td>{{quantity}}</td>
+                <td>${{price}}</td> 
+                <td>
+                    <a href="/inventory/edit/{{inventoryID}}">Edit</a>
+                    <form action="/inventory/delete" method="POST" style="display:inline;">
+                        <input type="hidden" name="inventoryID" value="{{inventoryID}}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+

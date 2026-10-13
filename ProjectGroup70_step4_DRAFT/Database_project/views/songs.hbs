@@ -1,0 +1,58 @@
+<h2>Songs</h2>
+
+<h3>Add New Song</h3>
+<form action="/songs/create" method="POST">
+  <label>Title: <input type="text" name="title" required></label><br>
+  <label>Genre: <input type="text" name="genre" required></label><br>
+  <label>Artist: <input type="text" name="artist" required></label><br>
+  <label>Album: <input type="text" name="album" required></label><br>
+  <label>Release Year: 
+    <input type="number" name="dateReleased" required>
+  </label><br>
+  <label>Format: 
+    <select name="format" required>
+      <option value="vinyl">Vinyl</option>
+      <option value="cd">CD</option>
+      <option value="cassette">Cassette</option>
+    </select>
+  </label><br>
+  <input type="submit" value="Add Song">
+</form>
+
+
+
+<hr>
+
+<h3>Songs</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Song ID</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Release Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each songs}}
+            <tr>
+                <td>{{songID}}</td>
+                <td>{{title}}</td>
+                <td>{{artist}}</td>
+                <td>{{album}}</td>
+                <td>{{dateReleased}}</td>
+                <td>
+                    <a href="/inventory/edit/{{inventoryID}}">Edit</a>
+                    <form action="/songs/delete" method="POST">
+                        <input type="hidden" name="songID" value="{{songID}}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+

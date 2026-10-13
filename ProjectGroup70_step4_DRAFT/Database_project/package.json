@@ -1,0 +1,29 @@
+{
+  "name": "disco-funk-records-database",
+  "version": "1.0.0",
+  "description": "CS340 Database Project - Vintage Music Store Management System",
+  "main": "app.js",
+  "scripts": {
+    "development": "npx nodemon app.js",
+    "production": "npx forever start app.js",
+    "stop_production": "npx forever stop app.js"
+  },
+  "keywords": [
+    "database",
+    "music",
+    "inventory"
+  ],
+  "authors": [
+    "Johnathan Prevish",
+    "Riley Monroe"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.3",
+    "forever": "^4.0.3",
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.10"
+  },
+  "author": ""
+}

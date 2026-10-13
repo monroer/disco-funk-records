@@ -1,0 +1,129 @@
+/* style.css generated with chatgpt, with prompt: could you create a styles.css file 
+that feels like a retro 70's website?
+
+This was done because I hate trying to get a website to look nice
+Jonathan Prevish
+*/
+
+/* ===== Global Page Styling ===== */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f1ec;
+    margin: 0;
+    padding: 0;
+    color: #2c2c2c;
+}
+
+/* ===== Header ===== */
+#header {
+    background: #4b3832;
+    color: #f9e5c5;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 4px solid #854442;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+#header h2 {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+/* ===== Navigation ===== */
+#navigation {
+    background: #854442;
+    padding: 10px;
+}
+
+#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+#navigation a:hover {
+    background: #be9b7b;
+    color: #2c2c2c;
+}
+
+/* ===== Main Content ===== */
+#main-content {
+    padding: 20px 40px;
+}
+
+.link-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.section-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.link-box a {
+    background: #4b3832;
+    color: white;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.link-box a:hover {
+    background: #854442;
+}
+
+/* ===== Table Styling (for DB pages) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #4b3832;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:hover {
+    background: #f1e7da;
+}
+
+/* ===== Footer ===== */
+#footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background: #4b3832;
+    color: #fff;
+}

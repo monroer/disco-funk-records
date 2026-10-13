@@ -1,0 +1,60 @@
+<h2>Customers</h2>
+
+<form action="/customers/create" method="POST">
+    <label>Name:
+        <input type="text" name="name" required>
+    </label>
+    <br>
+
+    <label>Address:
+        <input type="text" name="address" required>
+    </label>
+    <br>
+
+    <label>Phone Number:
+        <input type="text" name="phoneNumber">
+    </label>
+    <br>
+
+    <label>Email:
+        <input type="email" name="email">
+    </label>
+    <br>
+
+    <input type="submit" value="Add Customer">
+</form>
+
+
+<hr>
+
+<h3>Customer List</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Action</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {{#each customers}}
+            <tr>
+                <td>{{customerID}}</td>
+                <td>{{name}}</td>
+                <td>{{address}}</td>
+                <td>{{phoneNumber}}</td>
+                <td>{{email}}</td>
+                <td>
+                    <a href="/customers/edit/{{customerID}}">Edit</a>
+                    <form action="/customers/delete" method="POST" style="display:inline;" >
+                        <input type="hidden" name="customerID" value="{{customerID}}">
+                        <input type="submit" value="Delete" class="delete-button">
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
